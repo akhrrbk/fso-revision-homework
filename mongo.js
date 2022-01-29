@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 
 // error
 if(process.argv.length < 3){
-    console.log('provide the password in this order node mongo.js <password>');
+    console.log('provide the password in this order node mongo.js <password>')
 }
 
 // retreiving data from database
@@ -21,19 +21,22 @@ const Person = mongoose.model('Person', personSchema)
 
 // conditions
 if(process.argv.length === 3){
-    console.log('Phonebook:');
+    console.log('Phonebook:')
+
     Person.find().then(res => {
         res.forEach(person => {
-            console.log(person);
+            console.log(person)
         })
         mongoose.connection.close()
     })
 } else if(process.argv.length === 4){
-    console.log('some content is missing');
+    console.log('some content is missing')
     mongoose.connection.close()
 } else if(process.argv.length === 5){
     const nameinput = process.argv[3]
     const numberinput = process.argv[4]
+
+
 
     const person = new Person({
         name: nameinput,
@@ -42,7 +45,7 @@ if(process.argv.length === 3){
     })
 
     person.save().then(res => {
-        console.log('contact saved!');
+        console.log('contact saved!')
         mongoose.connection.close()
     })
 }

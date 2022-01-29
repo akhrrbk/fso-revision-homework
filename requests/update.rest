@@ -1,0 +1,6 @@
+put http://localhost:3001/api/persons/61f3ef4659493b0683b090f4
+Content-Type: application/json
+
+{
+    "name": "Axror"
+}
