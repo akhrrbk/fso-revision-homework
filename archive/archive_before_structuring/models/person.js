@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
-const config = require('../utils/config')
 
-const url = config.MONGODB_URI
+const url = process.env.haha
+// const url = 'mongodb+srv://jalap:befwejrgfwejrgbwejrg@cluster0.jn9rt.mongodb.net/phonebook?retryWrites=true&w=majority'
 
 console.log(`connecting to ${url}`)
 mongoose.connect(url)
